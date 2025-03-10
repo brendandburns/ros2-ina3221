@@ -1,0 +1,22 @@
+launch:
+- arg:
+    name: "i2c_device"
+    default: "/dev/i2c-1"
+- arg:
+    name: "topic"
+    default: "power"
+- arg:
+    name: "channel"
+    default: "0"
+
+- node:
+    pkg: "ros2-power-ina3221"
+    exec: "ros2_ina3221"
+    name: "ros2_ina3221"
+    param:
+    - name: "i2c_device"
+      value: "$(var i2c_device)"
+    - name: "topic"
+      value: "$(var topic)"
+    - name: "channel"
+      value: "$(var channel)"
