@@ -7,14 +7,13 @@
 
 using namespace std::chrono_literals;
 
-class INA3221Publisher: public rclcpp::Node
+class INA3221Publisher : public rclcpp::Node
 {
 public:
   INA3221Publisher();
   ~INA3221Publisher();
 
   void init_param();
-
 
 private:
   void _init();
